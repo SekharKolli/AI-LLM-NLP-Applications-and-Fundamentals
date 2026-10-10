@@ -10,7 +10,7 @@ from llm_client import get_response
 
 st.set_page_config(page_title="Daily Essentials — Support", page_icon="🛒")
 
-st.title("🛒 Daily Essentials — Customer Support")
+st.title("🛒 Daily Essentials — Customer Support (Bare Wrapper around LLM)")
 st.caption("Week 1 build: a raw LLM behind a chat box. Nothing else.")
 
 with st.sidebar:

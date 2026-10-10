@@ -17,7 +17,7 @@ load_dotenv()
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
-MODEL = "claude-sonnet-4-6"
+MODEL = os.environ["ANTHROPIC_MODEL"]
 
 SYSTEM_PROMPT = """You are a customer support assistant for an online store
 called Daily Essentials. Answer customer questions about orders, shipping,
@@ -35,7 +35,8 @@ def call_llm(
     because callers now need to inspect it for tool_use blocks, not
     just read a string. See planner.py for how that's used.
     """
-    kwargs = dict(model=MODEL, max_tokens=max_tokens, system=system, messages=messages)
+    kwargs = dict(model=MODEL, max_tokens=max_tokens,
+                  system=system, messages=messages)
     if tools:
         kwargs["tools"] = tools
     return client.messages.create(**kwargs)

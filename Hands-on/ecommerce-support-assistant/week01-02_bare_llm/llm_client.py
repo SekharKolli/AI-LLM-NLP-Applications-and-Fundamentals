@@ -1,5 +1,5 @@
 """
-llm_client.py — the thinnest possible wrapper around the LLM API.
+llm_client.py — the thinnest possible wrapper around the LLM API. 
 
 This is intentional: Week 1's whole point is showing what an LLM does
 with *nothing* around it — no tools, no retrieved data, no memory beyond
@@ -15,9 +15,7 @@ load_dotenv()
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
-# MODEL = "claude-sonnet-4-6"
-ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
-
+MODEL = os.environ["ANTHROPIC_MODEL"]
 
 SYSTEM_PROMPT = """You are a customer support assistant for an online store
 called Daily Essentials. Answer customer questions about orders, shipping,
